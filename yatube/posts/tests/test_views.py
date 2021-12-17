@@ -97,9 +97,7 @@ class PostPagesTests(TestCase):
                 kwargs={'username': self.post.author.username}
             )
         )
-        quantity = len(response.context['page_obj'])
         self.assertEqual(response.context['author'], self.post.author)
-        self.assertEqual(response.context['quantity'], quantity)
 
     def test_post_detail_page_show_correct_context(self):
         """Шаблон post_detail сформирован с правильным контекстом."""
